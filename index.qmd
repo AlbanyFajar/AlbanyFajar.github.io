@@ -1,4 +1,3 @@
-
 ---
 title: "PENGARUH EKSPOR DAN IMPOR TERHADAP PERTUMBUHAN EKONOMI DI INDONESIA"
 subtitle: "Metode Penelitian Politeknik APP Jakarta"
@@ -9,7 +8,6 @@ format:
   html: default
   docx: default
 ---
-
 ![](poltekapp.jpg)
 
 ## Pendahuluan
@@ -21,11 +19,9 @@ Pertumbuhan ekonomi adalah indikator utama kesejahteraan suatu negara, dan kemam
 Dalam konteks Indonesia, sebagai negara dengan ekonomi yang terus berkembang, pemahaman mendalam tentang hubungan antara ekspor, impor, dan pertumbuhan ekonomi sangat penting. Periode 1999-2020 yang menjadi cakupan penelitian mencakup periode signifikan dalam sejarah ekonomi Indonesia, termasuk periode krisis keuangan Asia pada tahun 1997 dan proses globalisasi ekonomi yang semakin memperkuat keterkaitan antarnegara. Dengan menggunakan metode penelitian olah data menggunakan RStudio, penelitian ini bertujuan untuk mengidentifikasi pola hubungan, signifikansi, dan dampak dari ekspor dan impor terhadap pertumbuhan ekonomi Indonesia
 
 
-
 ### Ruang lingkup
 
 Penelitian ini bertujuan untuk mendalami hubungan antara ekspor, impor, dan pertumbuhan ekonomi Indonesia dalam rentang waktu 1999-2020. Fokus utama penelitian adalah memahami bagaimana ekspor dapat memperluas pasar produk nasional, meningkatkan pendapatan, dan menciptakan lapangan kerja, sementara impor membawa inovasi, teknologi, dan barang konsumsi yang sulit diproduksi secara efisien di dalam negeri. Rentang waktu penelitian mencakup periode krisis keuangan Asia pada tahun 1997 dan proses globalisasi ekonomi yang semakin memperkuat keterkaitan antarnegara. Metode penelitian yang digunakan adalah olah data menggunakan RStudio, yang diharapkan dapat mengidentifikasi pola hubungan, signifikansi, dan dampak dari ekspor dan impor terhadap pertumbuhan ekonomi Indonesia. Dengan demikian, penelitian ini berpotensi memberikan wawasan mendalam tentang faktor-faktor yang mempengaruhi dinamika ekonomi Indonesia, memungkinkan pengambilan keputusan yang lebih baik di bidang kebijakan ekonomi dan perdagangan.
-
 
 ### Rumusan masalah
 
@@ -34,8 +30,6 @@ Berdasarkan uraian latar belakang diatas maka yang menjadi masalah pokok pada pe
 1.	Bagaimana hubungan antara volume ekspor Indonesia dan pertumbuhan ekonomi selama periode 1999-2020, dan apakah terdapat pola atau tren tertentu yang dapat diidentifikasi dari data tersebut?
 
 2.	Sejauh mana impor memiliki dampak terhadap pertumbuhan ekonomi Indonesia selama rentang waktu yang sama, dan apakah ada perubahan signifikan dalam korelasi antara impor dan pertumbuhan ekonomi setelah periode krisis keuangan Asia pada tahun 1997?
-
-
 
 ### Tujuan dan manfaat penelitian
 
@@ -57,8 +51,6 @@ B.	Bagi Instansi
 
 Hasil penelitian ini memberikan manfaat praktis bagi instansi terkait, seperti Kementerian Perdagangan atau Lembaga Statistik. Temuan ini dapat menjadi dasar untuk merumuskan kebijakan perdagangan dan ekonomi yang lebih efektif, memungkinkan instansi untuk mengarahkan sumber daya dengan lebih tepat dan mendukung pertumbuhan ekonomi yang berkelanjutan.
 
-
-
 ### Package
 
 Untuk keperluan menunjang regresi multivariat yang dilakukan di Rstudio untuk penelitian ini antara lain sebagai berikut:
@@ -69,7 +61,6 @@ Untuk keperluan menunjang regresi multivariat yang dilakukan di Rstudio untuk pe
 library(tidyverse)
 library(readxl)
 ```
-
 
 ## Studi pustaka
 
@@ -87,7 +78,6 @@ Importasi mencakup sejumlah tahapan, termasuk proses perizinan, pembayaran bea m
 Selain itu, impor juga dapat membawa dampak positif dalam meningkatkan variasi barang dan layanan yang tersedia di pasar domestik, mendorong inovasi, serta memberikan kontribusi terhadap diversifikasi ekonomi. Meskipun impor memberikan manfaat signifikan, pengaturan yang cermat diperlukan untuk menjaga keseimbangan perdagangan dan melindungi industri lokal agar tetap kompetitif. Oleh karena itu, impor tidak hanya sebagai alat untuk memenuhi kebutuhan, tetapi juga sebagai strategi yang cerdas untuk mengoptimalkan sumber daya dan meningkatkan kesejahteraan ekonomi suatu negara.
 
 
-
 ## Metode penelitian
 
 ### Data
@@ -97,7 +87,7 @@ Selain itu, impor juga dapat membawa dampak positif dalam meningkatkan variasi b
 library(readxl) 
 library(tidyverse) 
 library(kableExtra) 
-dat <- read_excel("The Data.xlsx")
+dat<- read_excel("The Data.xlsx")
 kbl(dat) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
@@ -113,7 +103,6 @@ reg1<-lm(y~x+s, data=dat)
 dat$m<-resid(reg1)
 plot(dat$x,dat$m,xlab="Ekspor dan Impor",ylab="error")
 abline(h=0) #membuat garis horizontal di y=0
-
 ```
 
 Plot pengaruh error terhadap Ekspor dan Impor
@@ -149,7 +138,6 @@ Pada bagian ini dapat ditampilkan data dan visualisasi data yang telah dikumpulk
 | S                  | -3.865e-05  | 1.803e-05 |         |          |
 
 
-
 ### Analisis masalah
 
 Hasil regresinya adalah
@@ -173,7 +161,6 @@ b.	Koefisien regresi positif pada variabel ekspor memberikan indikasi bahwa peni
 
 
 ## Referensi
-
 Adrian Sutedi, S. H. (2014). Hukum Ekspor Impor. RAS.
 
 Berata, I. K. O. (2014). Panduan Praktis Ekspor Impor. RAS.
@@ -181,3 +168,5 @@ Berata, I. K. O. (2014). Panduan Praktis Ekspor Impor. RAS.
 Pridayanti, A. (2014). Pengaruh ekspor, impor, dan nilai tukar terhadap pertumbuhan ekonomi di Indonesia periode 2002-2012. Jurnal Pendidikan Ekonomi (JUPE), 2(2).
 
 Sasono, H. B. (2021). Manajemen Pelabuhan dan Realisasi Ekspor Impor. Penerbit Andi.
+
+
